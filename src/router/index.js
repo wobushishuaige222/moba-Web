@@ -6,7 +6,7 @@ import Message from '@/components/ArticleMessage'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: '/web/',
   routes: [
     {
@@ -24,7 +24,7 @@ export default new Router({
         path: '/article/:id',
         name: 'article',
         component: resolve=>require(['../components/ArticleMessage.vue'], resolve),
-        props: (app) =>({id: app.params.id}) 
+        props: (app) =>({id: app.params.id})
       }]
     },
     {
@@ -32,6 +32,6 @@ export default new Router({
       name: 'hero',
       component: resolve=>require(['../components/Hero.vue'], resolve),
       props: (app) => ({id: app.params.id})
-    } 
+    }
   ]
 })

@@ -42,7 +42,8 @@ export default {
   },
   data() {
     return {
-      model: null
+      model: null,
+      test: ''
     };
   },
   created() {
