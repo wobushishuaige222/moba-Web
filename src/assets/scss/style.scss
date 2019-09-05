@@ -1,0 +1,222 @@
+@import './variable';
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    font-size: 13px;
+}
+
+
+a {
+    color: #999
+}
+
+body {
+    margin: 0;
+    background-color: #F1F1F1;
+    line-height: 1.2rem
+}
+
+//width: 100%
+.w_100 {
+    width: 100%
+}
+
+//height: 100%
+.h_100 {
+    height: 100%
+}
+
+//nav 
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-item {
+        border-bottom: 3px solid transparent;
+        padding-bottom: .2rem;
+
+        &.active {
+            color: map-get($colors, 'primary');
+            border-bottom: 3px solid map-get($colors, 'primary')
+        }
+    }
+
+    &.nav-inverse {
+        .nav-item {
+            color: map-get($colors, 'white');
+            border-bottom: 3px solid transparent;
+
+            &.active {
+                // border-color: map-get($colors, 'white' );
+                border-bottom: 3px solid map-get($colors, 'white')
+            }
+        }
+    }
+}
+
+//ellipsis
+.text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap
+}
+
+// flex
+.d-flex {
+    display: flex
+}
+
+.f-wrap {
+    flex-wrap: wrap
+}
+
+.flex-column {
+    flex-direction: column
+}
+
+.flex-1 {
+    flex: 1
+}
+
+.flex-grow-1 {
+    flex-grow: 1
+}
+
+// text-align
+@each $var,
+$val in $ta-types {
+    .text-#{$var} {
+        text-align: $val !important;
+    }
+}
+
+// button 
+.btn {
+    border-radius: .153846rem;
+    border: none;
+    font-size: map-get($font-sizes, 'sm') * $base-font-size;
+    -webkit-font-smoothing: antialiased
+}
+
+// colors
+@each $colorKey,
+$colorValue in $colors {
+    .text-#{$colorKey} {
+        color: $colorValue
+    }
+
+    .bg-#{$colorKey} {
+        background-color: $colorValue
+    }
+}
+
+// font-size
+@each $sizekey,
+$sizevalue in $font-sizes {
+    .fs-#{$sizekey} {
+        font-size: $sizevalue * $base-font-size
+    }
+}
+
+//flex---justify-content
+@each $key,
+$val in $flex-jc {
+    .jc-#{$key} {
+        justify-content: $val
+    }
+}
+
+//flex---align-items
+@each $key,
+$val in $flex-ai {
+    .ai-#{$key} {
+        align-items: $val
+    }
+}
+
+// spacing(间距)
+/* 
+//其中m表示margin，而p表示padding
+*/
+@each $typeKey,
+$type in $spacing-types {
+
+    // m-1
+    @each $sizekey,
+    $sizeVal in $spacing-sizes {
+        .#{$typeKey}-#{$sizekey} {
+            #{$type}: $sizeVal * $spacing-base-size
+        }
+    }
+
+    //.mx-1 
+    @each $sizekey,
+    $sizeVal in $spacing-sizes {
+        .#{$typeKey}x-#{$sizekey} {
+            #{$type}-left: $sizeVal * $spacing-base-size;
+            #{$type}-right: $sizeVal * $spacing-base-size
+        }
+    }
+
+    //my-1
+    @each $sizekey,
+    $sizeVal in $spacing-sizes {
+        .#{$typeKey}y-#{$sizekey} {
+            #{$type}-top: $sizeVal * $spacing-base-size;
+            #{$type}-bottom: $sizeVal * $spacing-base-size
+        }
+    }
+
+    // 形式  mt-1
+    @each $directionKey,
+    $directionVal in $spacing-direction {
+
+        @each $sizekey,
+        $sizeVal in $spacing-sizes {
+
+            //.mt-1
+            .#{$typeKey}#{$directionKey}-#{$sizekey} {
+                #{$type}-#{$directionVal}: $sizeVal * $spacing-base-size
+            }
+        }
+
+    }
+
+}
+
+//sprite
+.sprite {
+    background: url('../images/index.png') no-repeat 63.546% 15.517%;
+    background-size: 28.846154rem;
+    display: inline-block;
+
+    &.sprite-news {
+        width: 1.769231rem;
+        height: 1.538462rem;
+    }
+
+    &.sprite-arrow {
+        background-position: 38.577% 52.076%;
+        width: .769231rem;
+        height: .769231rem;
+    }
+}
+
+;
+
+// border-color 
+/*
+ border-direction
+*/
+@each $var,
+$val in $border-dir {
+    .border-#{$var} {
+        border-#{$val}: 1px solid #dcdcdc
+    }
+}
+
+;

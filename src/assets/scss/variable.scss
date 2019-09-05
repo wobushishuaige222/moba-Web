@@ -1,0 +1,69 @@
+$colors:("primary": #db9e3f,
+    "white":#fff,
+    "light": #f9f9f9,
+    "black": #000,
+    "dark": #222,
+    "dark-1":#343440,
+    "grey":#999,
+    "info":#4b67af,
+    "light-1": #d4d9de,
+    'blur': #4394e4,
+    'blue-1': #1f3695,
+    'danger': #791a15,
+    'white-1': #7a7a80,
+    'black-1': #343440
+);
+$border-color: map-get($colors, 'light-1' );
+//
+$flex-jc:(start: flex-start,
+    end: flex-end,
+    center: center,
+    between:space-between,
+    around: space-around);
+$flex-ai:(start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch:stretch);
+//
+$base-font-size: 1rem;
+// text-align
+$ta-types: (
+  left: left,
+  right: right,
+  center: center
+);
+// 已13px为基准计算的
+$font-sizes: (
+    xxs: .615385,
+    xs: .769231,
+    sm: .923077,
+    md: 1,
+    lg: 1.07692,
+    xl: 1.230769,
+    xxl: 1.538462
+    );
+$spacing-base-size: 1rem;
+$spacing-types: (
+  m: margin,
+  p: padding
+);
+$spacing-direction: (
+   t:top,
+   r:right,
+   b: bottom,
+   l: left 
+);
+$spacing-sizes: (
+    0:0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3
+);
+$border-dir: (
+    l:'left',
+    r: 'right',
+    b: 'bottom',
+    t:'top'
+)
